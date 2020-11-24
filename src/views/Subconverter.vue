@@ -64,13 +64,13 @@
                     <el-button slot="append" @click="gotoRemoteConfig" icon="el-icon-link">配置示例</el-button>
                   </el-select>
                 </el-form-item>
-                <el-form-item label="IncludeRemarks:">
+                <el-form-item label="包含节点:">
                   <el-input v-model="form.includeRemarks" placeholder="节点名包含的关键字，支持正则" />
                 </el-form-item>
-                <el-form-item label="ExcludeRemarks:">
+                <el-form-item label="排除节点:">
                   <el-input v-model="form.excludeRemarks" placeholder="节点名不包含的关键字，支持正则" />
                 </el-form-item>
-                <el-form-item label="FileName:">
+                <el-form-item label="输出文件名:">
                   <el-input v-model="form.filename" placeholder="返回的订阅文件名" />
                 </el-form-item>
                 <el-form-item label-width="0px">
@@ -254,71 +254,41 @@ export default {
           ssd: "ssd",
           v2ray: "v2ray"
         },
-        backendOptions: [{ value: "http://127.0.0.1:25500/sub?" }],
+        backendOptions: [{ value: defaultBackend }],
         remoteConfig: [
           {
             label: "universal",
             options: [
               {
-                label: "No-Urltest",
+                label: "ClashX",
                 value:
-                  "https://subconverter.oss-ap-southeast-1.aliyuncs.com/Rules/RemoteConfig/universal/no-urltest.ini"
+                  "https://raw.githubusercontent.com/sengoku-f/subconverteriniexample/master/myclash.ini"
               },
               {
-                label: "Urltest",
+                label: "ClashWEB",
                 value:
-                  "https://subconverter.oss-ap-southeast-1.aliyuncs.com/Rules/RemoteConfig/universal/urltest.ini"
-              }
+                  "https://raw.githubusercontent.com/sengoku-f/subconverteriniexample/master/myclash_Minimalist.ini"
+              },
+              {
+                label: "OpenClash",
+                value:
+                  "https://raw.githubusercontent.com/sengoku-f/subconverteriniexample/master/myclash_OpenWrt.ini"
+              },
+              {
+                label: "Quantumult X",
+                value:
+                  "https://raw.githubusercontent.com/sengoku-f/subconverteriniexample/master/QuanX/my.ini"
+              },
             ]
           },
           {
             label: "customized",
             options: [
               {
-                label: "Maying",
+                label: "节点重命名",
                 value:
-                  "https://subconverter.oss-ap-southeast-1.aliyuncs.com/Rules/RemoteConfig/customized/maying.ini"
+                  "https://raw.githubusercontent.com/sengoku-f/subconverteriniexample/master/rename.ini"
               },
-              {
-                label: "rixCloud",
-                value:
-                  "https://subconverter.oss-ap-southeast-1.aliyuncs.com/Rules/RemoteConfig/customized/rixcloud.ini"
-              },
-              {
-                label: "YoYu",
-                value:
-                  "https://subconverter.oss-ap-southeast-1.aliyuncs.com/Rules/RemoteConfig/customized/yoyu.ini"
-              },
-              {
-                label: "Ytoo",
-                value:
-                  "https://subconverter.oss-ap-southeast-1.aliyuncs.com/Rules/RemoteConfig/customized/ytoo.ini"
-              },
-              {
-                label: "NyanCAT",
-                value:
-                  "https://subconverter.oss-ap-southeast-1.aliyuncs.com/Rules/RemoteConfig/customized/nyancat.ini"
-              },
-              {
-                label: "Nexitally",
-                value:
-                  "https://subconverter.oss-ap-southeast-1.aliyuncs.com/Rules/RemoteConfig/customized/nexitally.ini"
-              },
-              {
-                label: "SoCloud",
-                value:
-                  "https://subconverter.oss-ap-southeast-1.aliyuncs.com/Rules/RemoteConfig/customized/socloud.ini"
-              },
-              {
-                label: "ARK",
-                value:
-                  "https://subconverter.oss-ap-southeast-1.aliyuncs.com/Rules/RemoteConfig/customized/ark.ini"
-              },
-              {
-                label: "ssrCloud",
-                value:
-                  "https://subconverter.oss-ap-southeast-1.aliyuncs.com/Rules/RemoteConfig/customized/ssrcloud.ini"
-              }
             ]
           },
           {

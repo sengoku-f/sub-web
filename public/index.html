@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script type="text/javascript">
+      var targetProtocol = "https:";
+      if (location.protocol != targetProtocol && location.hostname !="localhost" && location.hostname !="127.0.0.1")
+        location.href = targetProtocol +
+        location.href.substring(location.protocol.length);
+    </script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
